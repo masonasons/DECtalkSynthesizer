@@ -1,0 +1,32 @@
+# Xcode
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Build artifacts
+build/
+*.o
+*.dylib
+
+# Note: lib/libdectalk.a and Shared/dectalk/libtts_us.a ARE included
+# They're needed for building. To rebuild, see the dectalk repo.
+
+# Provisioning profiles
+*.mobileprovision
+*.provisionprofile
+
+# Sensitive files
+*.p12
+*.cer
