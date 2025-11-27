@@ -1,18 +1,8 @@
 import SwiftUI
 import AVFoundation
 
-/// App group identifier for shared settings
-private let kAppGroupIdentifier = "group.com.dectalk.synthesizer"
-private let kSPFSettingKey = "dectalk_spf_value"
-
 struct ContentView: View {
     @StateObject private var viewModel = DECtalkViewModel()
-    @State private var spfValue: Double = 100
-    @State private var appGroupWorking: Bool = false
-
-    private var sharedDefaults: UserDefaults? {
-        UserDefaults(suiteName: kAppGroupIdentifier)
-    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -56,42 +46,6 @@ struct ContentView: View {
             }
             .padding(.horizontal)
 
-            // Speed Factor (SPF)
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Text("Speed Factor (SPF)")
-                        .font(.headline)
-                    Spacer()
-                    Text("\(Int(spfValue))")
-                        .font(.system(.body, design: .monospaced))
-                        .foregroundStyle(.secondary)
-                }
-
-                HStack {
-                    Text("Fast")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    Slider(value: $spfValue, in: 50...200, step: 5)
-                        .onChange(of: spfValue) { _, newValue in
-                            saveSPFValue(Int(newValue))
-                        }
-                    Text("Slow")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-
-                Text("Lower values = faster speech. Default is 100.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-
-                if !appGroupWorking {
-                    Text("Note: SPF requires Apple Developer account for app group support.")
-                        .font(.caption2)
-                        .foregroundStyle(.orange)
-                }
-            }
-            .padding(.horizontal)
-
             Divider()
 
             // Status
@@ -131,25 +85,10 @@ struct ContentView: View {
             .padding(.horizontal)
             .padding(.bottom)
         }
-        .frame(width: 450, height: 550)
+        .frame(width: 450, height: 500)
         .onAppear {
             viewModel.loadVoices()
-            loadSPFValue()
         }
-    }
-
-    private func loadSPFValue() {
-        // Test if app group is working by trying to write and read
-        let testKey = "app_group_test"
-        sharedDefaults?.set(true, forKey: testKey)
-        appGroupWorking = sharedDefaults?.bool(forKey: testKey) == true
-
-        let stored = sharedDefaults?.integer(forKey: kSPFSettingKey) ?? 0
-        spfValue = stored > 0 ? Double(stored) : 100
-    }
-
-    private func saveSPFValue(_ value: Int) {
-        sharedDefaults?.set(value, forKey: kSPFSettingKey)
     }
 }
 

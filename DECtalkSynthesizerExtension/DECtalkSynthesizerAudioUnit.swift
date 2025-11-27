@@ -6,11 +6,7 @@ import Accelerate
 
 fileprivate let log = Logger(subsystem: "com.dectalk.synthesizer", category: "AudioUnit")
 
-/// Shared UserDefaults key for SPF setting
-private let kSPFSettingKey = "dectalk_spf_value"
-private let kAppGroupIdentifier = "group.com.dectalk.synthesizer"
-
-/// Default SPF value (can be changed at compile time)
+/// Default SPF value (hardcoded since app group preferences are disabled)
 private let kDefaultSPFValue = 100
 
 /// DECtalk Speech Synthesis Provider Audio Unit
@@ -35,9 +31,6 @@ public class DECtalkSynthesizerAudioUnit: AVSpeechSynthesisProviderAudioUnit {
 
     /// Current voice identifier
     private var currentVoiceIdentifier: String = "com.dectalk.voice.paul"
-
-    /// Shared UserDefaults for app group
-    private let sharedDefaults = UserDefaults(suiteName: kAppGroupIdentifier)
 
     // MARK: - Voice Definitions
 
