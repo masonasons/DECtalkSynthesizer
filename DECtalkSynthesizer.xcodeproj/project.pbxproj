@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A1000001001 /* DECtalkSynthesizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001000 /* DECtalkSynthesizerApp.swift */; };
 		A1000002001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000 /* ContentView.swift */; };
-		A1000003001 /* DECtalkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003000 /* DECtalkViewModel.swift */; };
 		A1000011001 /* DECtalkSynthesizerAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011000 /* DECtalkSynthesizerAudioUnit.swift */; };
 		A1000012001 /* AudioUnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012000 /* AudioUnitFactory.swift */; };
 		A1000021001 /* DECtalkBridge.c in Sources */ = {isa = PBXBuildFile; fileRef = A1000021000 /* DECtalkBridge.c */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		A1000001000 /* DECtalkSynthesizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECtalkSynthesizerApp.swift; sourceTree = "<group>"; };
 		A1000002000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A1000003000 /* DECtalkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECtalkViewModel.swift; sourceTree = "<group>"; };
 		A1000004000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1000005000 /* DECtalkSynthesizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DECtalkSynthesizer.entitlements; sourceTree = "<group>"; };
 		A1000011000 /* DECtalkSynthesizerAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DECtalkSynthesizerAudioUnit.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			children = (
 				A1000001000 /* DECtalkSynthesizerApp.swift */,
 				A1000002000 /* ContentView.swift */,
-				A1000003000 /* DECtalkViewModel.swift */,
 				A1000004000 /* Info.plist */,
 				A1000005000 /* DECtalkSynthesizer.entitlements */,
 			);
@@ -258,7 +255,6 @@
 			files = (
 				A1000001001 /* DECtalkSynthesizerApp.swift in Sources */,
 				A1000002001 /* ContentView.swift in Sources */,
-				A1000003001 /* DECtalkViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
